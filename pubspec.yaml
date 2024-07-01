@@ -1,0 +1,75 @@
+name: blinqpay
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.6
+  intl: ^0.18.1
+  firebase_core: ^3.1.1
+  cloud_firestore: ^5.0.2
+  flutter_screenutil: ^5.7.0
+  go_router: ^10.1.1
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.0
+  internet_connection_checker: ^1.0.0+1
+  shared_preferences: ^2.1.0
+  provider: ^6.0.5
+  permission_handler: ^10.2.0
+  iconsax_flutter: ^1.0.0
+  timeago: ^3.2.2
+  date_format: ^2.0.7
+  pin_code_fields: ^8.0.1
+  another_flushbar: ^1.12.30
+  path_provider: ^2.0.0
+  font_awesome_flutter: ^10.7.0
+  flutter_svg: ^2.0.10+1
+  #video_player: ^2.9.0
+  #chewie: ^1.8.1
+  random_avatar: ^0.0.8
+  animate_do: ^3.3.4
+  lottie: ^3.1.2
+  get_it: ^7.7.0
+  cached_video_player: ^2.0.4
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.4
+  build_runner: ^2.4.8
+
+  flutter_lints: ^3.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/png/
+    - assets/images/svg/
+    - assets/images/png/tabs/
+    - assets/images/lottie/
+  
+  fonts:
+    - family: PlusJakarta
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+        - asset: assets/fonts/PlusJakartaSans-Italic.ttf
+        - asset: assets/fonts/PlusJakartaSans-Light.ttf
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
