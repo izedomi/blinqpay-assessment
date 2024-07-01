@@ -31,7 +31,7 @@ class TabsViewModel extends ChangeNotifier {
         width: 25.w,
         height: 25.w),
   ];
-  List screens = [
+  List<Widget> screens = <Widget>[
     const PostScreen(),
     const UsersScreen(),
     const ProfileScreen()

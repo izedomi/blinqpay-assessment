@@ -1,4 +1,3 @@
-import 'package:blinqpay/app/utils/log_util.dart';
 import 'package:blinqpay/view_models/shared/tabs_view_model.dart';
 import 'package:blinqpay/views/shared/utils/space.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +15,16 @@ class _ParentScreenState extends State<ParentScreen> {
   Widget build(BuildContext context) {
     return Consumer<TabsViewModel>(builder: (context, vm, _) {
       return Scaffold(
-        body: PopScope(
-          canPop: false,
-          onPopInvoked: (value) {
-            dLog(value);
-          },
-          child: vm.screens[vm.currentIndex],
+        // body: PopScope(
+        //   canPop: false,
+        //   onPopInvoked: (value) {
+        //     dLog(value);
+        //   },
+        //   child: vm.screens[vm.currentIndex],
+        // ),
+        body: IndexedStack(
+          index: vm.currentIndex,
+          children: vm.screens,
         ),
         bottomNavigationBar: Container(
           clipBehavior: Clip.hardEdge,

@@ -45,30 +45,34 @@ fully in view. It should stop playing if the user has scrolled past it.
 - Video post content plays if fully visible and stops playing once user scrolls past it
 - Simple toast message when there is no internet connection
 - Caching: Users can navigate the application without the internet connection. See posts and users list from local cache.
+- Sync data once internet is restored
 - Personal profile and engagements
-- Blinqers profile by clicking on a blinqer(user)
-— Dark and Light theme mode selection for users
-— Theme mode selection persistence
-— Unit test for business logic
+- See a blinqer's profile
+- Dark and Light theme mode selection for users
+- Theme mode selection persistence
+- Pull to refresh
+- Unit test for business logic
 
 &nbsp;&nbsp;&nbsp;
 
 ## Light Mode
 <p float="left">
-  <img src="screen_splash_light.png" width="250">
-  <img src="screen_posts_light.png" width="250">
-  <img src="screen_users_light.png" width="250">
-  <img src="screen_profile_light.png" width="250">
+  <img src="screen_splash_light.png" width="200">
+  <img src="screen_posts_light.png" width="200">
+  <img src="screen_users_light.png" width="200">
+  <img src="screen_profile_light.png" width="200">
 </p>
 
 ## Dark Mode
 <p float="left">
-  <img src="screen_splash_dark.png" width="250">
-  <img src="screen_posts_dark.png" width="250">
-  <img src="screen_users_dark.png" width="250">
-  <img src="screen_profile_dark.png" width="250">
+  <img src="screen_splash_dark.png" width="200">
+  <img src="screen_posts_dark.png" width="200">
+  <img src="screen_users_dark.png" width="200">
+  <img src="screen_profile_dark.png" width="200">
 </p>
 
+
+## About Blinqpay Corp
 - [Blinqpay.io](https://blinqpay.io/)
 - [Blinqchat.io](https://blinqchat.io/)
     

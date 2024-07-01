@@ -32,12 +32,12 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> getUsers(UserServiceInterface userService) async {
+  Future<void> getUsers(UserServiceInterface userService,
+      {notifyUI = true}) async {
     try {
-      if (viewState == ViewState.busy || _users.isNotEmpty) {
-        return;
+      if (notifyUI || _users.isEmpty) {
+        setViewState(ViewState.busy);
       }
-      setViewState(ViewState.busy);
 
       _apiResponse = await userRepository.getUsers(userService);
 
@@ -59,4 +59,8 @@ class UserViewModel extends ChangeNotifier {
   get getService async => await ConnectivityUtil.hasInternet
       ? getIt<UserService>()
       : getIt<UserCacheService>();
+
+  syncData() async {
+    await getUsers(await getService);
+  }
 }

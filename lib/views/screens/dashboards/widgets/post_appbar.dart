@@ -1,6 +1,5 @@
 import 'package:blinqpay/app/constants/png_image_asset.dart';
 import 'package:blinqpay/app/constants/storage_keys.dart';
-import 'package:blinqpay/app/constants/svg_image_asset.dart';
 import 'package:blinqpay/app/utils/storage_util.dart';
 import 'package:blinqpay/views/shared/utils/space.dart';
 import 'package:blinqpay/views/shared/widgets/logo_image_component.dart';
@@ -8,7 +7,6 @@ import 'package:blinqpay/views/theme/app_color.dart';
 import 'package:blinqpay/views/theme/theme_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:provider/provider.dart';
 

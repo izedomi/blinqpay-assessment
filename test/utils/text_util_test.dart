@@ -1,5 +1,3 @@
-import 'package:blinqpay/app/repository/interfaces/user_repository_interface.dart';
-import 'package:blinqpay/app/services/users/interfaces/user_service_interface.dart';
 import 'package:blinqpay/app/utils/text_util.dart';
 import 'package:flutter_test/flutter_test.dart';
 

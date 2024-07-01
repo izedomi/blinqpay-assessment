@@ -1,10 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:blinqpay/app/enum/viewstate.dart';
-import 'package:blinqpay/app/services/posts/post_cache_service.dart';
-import 'package:blinqpay/app/services/posts/post_service.dart';
-import 'package:blinqpay/app/utils/app_init_util.dart';
 import 'package:blinqpay/app/utils/date_utils.dart';
-import 'package:blinqpay/app/utils/internet_connectivity_util.dart';
 import 'package:blinqpay/models/post_model.dart';
 import 'package:blinqpay/view_models/post_view_model.dart';
 import 'package:blinqpay/views/screens/dashboards/shimmers/post_item_shimmer.dart';
@@ -52,9 +48,7 @@ class _PostsComponentState extends State<PostsComponent> {
                 message: vm.errMsg,
                 topMargin: yspace(130),
                 onRetry: () async {
-                  vm.getPosts(await ConnectivityUtil.hasInternet
-                      ? getIt<PostService>()
-                      : getIt<PostCacheService>());
+                  vm.getPosts(await vm.getService);
                 },
               )),
         ));
@@ -168,7 +162,7 @@ class _PostsComponentState extends State<PostsComponent> {
                               url: post.link ?? "",
                               initials: "",
                               width: double.infinity,
-                              height: h(400),
+                              height: h(300),
                             ),
                           ),
                         ),

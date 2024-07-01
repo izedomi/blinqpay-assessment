@@ -75,7 +75,7 @@ class _PostScreenState extends State<PostScreen> {
                   title: const PostAppBar(),
                   expandedHeight:
                       h(vm.viewState == ViewState.error ? 130 : 180),
-                  collapsedHeight: h(60),
+                  collapsedHeight: h(65),
                   flexibleSpace: const FlexibleSpaceBar(
                       collapseMode: CollapseMode.pin,
                       background: PostUserAvatar()),

@@ -36,15 +36,10 @@ class PostViewModel extends ChangeNotifier {
     _posts = p;
   }
 
-  Future<void> getPosts(
-    PostServiceInterface postService,
-  ) async {
+  Future<void> getPosts(PostServiceInterface postService,
+      {notifyUI = true}) async {
     try {
-      if (viewState == ViewState.busy) {
-        return;
-      }
-
-      if (_posts.isEmpty) {
+      if (notifyUI) {
         setViewState(ViewState.busy);
       }
 
@@ -116,4 +111,8 @@ class PostViewModel extends ChangeNotifier {
   get getService async => await ConnectivityUtil.hasInternet
       ? getIt<PostService>()
       : getIt<PostCacheService>();
+
+  syncData() async {
+    await getPosts(await getService, notifyUI: false);
+  }
 }

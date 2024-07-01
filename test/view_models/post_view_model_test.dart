@@ -290,7 +290,7 @@ void main() async {
       expect(postViewModel.posts.isNotEmpty, true);
     });
 
-    test("error fetching failed", () async {
+    test("error fetching posts", () async {
       when(mockPostRepository.getPosts(mockPostService)).thenAnswer(
           (_) async => ApiResponse(success: false, code: 400, data: dynamic));
 

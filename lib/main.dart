@@ -1,8 +1,11 @@
 import 'package:blinqpay/app/constants/app_text.dart';
 import 'package:blinqpay/app/routes/router.dart';
 import 'package:blinqpay/app/utils/app_init_util.dart';
+import 'package:blinqpay/app/utils/log_util.dart';
 import 'package:blinqpay/base_screen.dart';
 import 'package:blinqpay/locator.dart';
+import 'package:blinqpay/view_models/post_view_model.dart';
+import 'package:blinqpay/view_models/user_view_model.dart';
 import 'package:blinqpay/views/theme/dark_theme.dart';
 import 'package:blinqpay/views/theme/light_theme.dart';
 import 'package:blinqpay/views/theme/theme_selector.dart';
@@ -52,6 +55,12 @@ class _MyAppState extends State<MyApp> {
                     child: MaterialApp.router(
                       title: AppText.appName,
                       builder: (context, child) {
+                        if (Provider.of<InternetConnectionStatus>(context) ==
+                            InternetConnectionStatus.connected) {
+                          dLog("Internet Connected...Attempting to sync data");
+                          context.read<PostViewModel>().syncData();
+                          context.read<UserViewModel>().syncData();
+                        }
                         final MediaQueryData data = MediaQuery.of(context);
                         return MediaQuery(
                             data: data.copyWith(

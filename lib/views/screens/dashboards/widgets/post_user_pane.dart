@@ -69,10 +69,11 @@ class PostUserAvatar extends StatelessWidget {
             margin: EdgeInsets.only(top: statusBarHeight),
             width: screenWidth,
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 yspace(75),
                 SizedBox(
-                  height: h(90),
+                  height: h(97),
                   child: ListView.separated(
                     padding: EdgeInsets.symmetric(horizontal: w(12)),
                     scrollDirection: Axis.horizontal,
