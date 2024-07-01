@@ -1,8 +1,8 @@
 import 'package:blinqpay/app/constants/png_image_asset.dart';
-import 'package:blinqpay/views/screens/dashboards/post_screen.dart';
-import 'package:blinqpay/views/screens/profile/profile_screen.dart';
-import 'package:blinqpay/views/screens/users/users_screen.dart';
-import 'package:blinqpay/views/shared/utils/space.dart';
+import 'package:blinqpay/presentations/screens/posts/post_screen.dart';
+import 'package:blinqpay/presentations/screens/profile/profile_screen.dart';
+import 'package:blinqpay/presentations/screens/users/users_screen.dart';
+import 'package:blinqpay/presentations/shared/utils/space.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';

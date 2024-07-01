@@ -1,6 +1,6 @@
 import 'package:blinqpay/app/routes/routes.dart';
-import 'package:blinqpay/views/screens/shared/parent_screen.dart';
-import 'package:blinqpay/views/screens/shared/splash_screen.dart';
+import 'package:blinqpay/presentations/screens/shared/parent_screen.dart';
+import 'package:blinqpay/presentations/screens/shared/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

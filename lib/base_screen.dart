@@ -1,4 +1,4 @@
-import 'package:blinqpay/views/shared/widgets/no_internet_component.dart';
+import 'package:blinqpay/presentations/shared/components/no_internet_component.dart';
 import 'package:flutter/material.dart';
 
 class BaseScreen extends StatefulWidget {
