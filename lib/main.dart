@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
                       builder: (context, child) {
                         if (Provider.of<InternetConnectionStatus>(context) ==
                             InternetConnectionStatus.connected) {
-                          dLog("Internet Connected...Attempting to sync data");
+                          dLog("Internet Connected....Attempting to sync data");
                           context.read<PostViewModel>().syncData();
                           context.read<UserViewModel>().syncData();
                         }
