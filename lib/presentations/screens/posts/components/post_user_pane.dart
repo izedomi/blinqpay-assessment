@@ -110,11 +110,17 @@ class PostUserAvatar extends StatelessWidget {
                                     width: w(65),
                                     radius: r(32.5),
                                     initials: TextUtil.getInitialsFromFullname(
-                                        user.username ?? "")),
+                                        user.username != null &&
+                                                user.username!.isNotEmpty
+                                            ? user.username!
+                                            : "N_A")),
                               ),
                               yspace(6),
                               Text(
-                                user.username ?? "",
+                                user.username != null &&
+                                        user.username!.isNotEmpty
+                                    ? user.username!
+                                    : "N_A",
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: fs(12),

@@ -44,7 +44,9 @@ class UserItemComponet extends StatelessWidget {
                   Text(user.name ?? ""),
                   yspace(3),
                   Text(
-                    user.username ?? "",
+                    user.username != null && user.username!.isNotEmpty
+                        ? user.username!
+                        : "N_A",
                     style: TextStyle(
                       fontSize: fs(10),
                     ),
