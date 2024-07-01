@@ -29,11 +29,11 @@ fully in view. It should stop playing if the user has scrolled past it.
 ### Modularity & Reusability
     Use MVVM architecture for proper seperation of concerns. Use simple functions with single responsibility. Created widget component for UI elements
 ### State Management
-    Manage app state effectively throughout app cycle
+    Manage app state effectively throughout the app life cycle
 ### Availability & Caching
     Access app functionalities without internet connection.
 ### Branding
-    Use company logo & colors that emphasize the company's brand
+    Use company logo & colors to emphasize the company's brand
 &nbsp;&nbsp;
 
 ## Implemented Features and Functionalites
@@ -42,13 +42,13 @@ fully in view. It should stop playing if the user has scrolled past it.
 - List of all posts and post types (text, video, image)
 - List of users (refered to as blinqers😉)
 - Like and unlike a post by double tapping on a post
-- Video post content plays if fully visible and stops playing once user scrolls past it
+- Video playback when visible to the user and stops playing once user scrolls past it
 - Simple toast message when there is no internet connection
 - Caching: Users can navigate the application without the internet connection. See posts and users list from local cache.
 - Data synchronization once internet is restored
 - Personal profile and engagements
 - See a blinqer's profile
-- Dark and Light theme mode selection for users
+- Dark and Light theme mode selection
 - Theme mode selection persistence
 - Pull to refresh
 - Unit test for business logic
