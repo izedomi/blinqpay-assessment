@@ -10,7 +10,6 @@ import 'package:blinqpay/app/utils/internet_connectivity_util.dart';
 import 'package:blinqpay/app/utils/log_util.dart';
 import 'package:blinqpay/models/api_response.dart';
 import 'package:blinqpay/models/post_model.dart';
-import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/material.dart';
 
 class PostViewModel extends ChangeNotifier {

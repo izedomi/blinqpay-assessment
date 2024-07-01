@@ -13,7 +13,6 @@ import 'package:blinqpay/views/shared/utils/space.dart';
 import 'package:blinqpay/views/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({super.key});

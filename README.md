@@ -58,7 +58,9 @@ fully in view. It should stop playing if the user has scrolled past it.
 ## Light Mode
 <p float="left">
   <img src="screen_splash_light.png" width="200">
+  <img src="screen_loading_light.png" width="200">
   <img src="screen_posts_light.png" width="200">
+  <img src="screen_no_internet_light.png" width="200">
   <img src="screen_users_light.png" width="200">
   <img src="screen_profile_light.png" width="200">
 </p>
@@ -66,7 +68,9 @@ fully in view. It should stop playing if the user has scrolled past it.
 ## Dark Mode
 <p float="left">
   <img src="screen_splash_dark.png" width="200">
+   <img src="screen_loading_dark.png" width="200">
   <img src="screen_posts_dark.png" width="200">
+  <img src="screen_no_internet_dark.png" width="200">
   <img src="screen_users_dark.png" width="200">
   <img src="screen_profile_dark.png" width="200">
 </p>

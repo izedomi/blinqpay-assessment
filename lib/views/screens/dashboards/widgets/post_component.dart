@@ -187,8 +187,7 @@ class _PostsComponentState extends State<PostsComponent> {
                                 height: h(300),
                                 play: (isMounted,
                                     CachedVideoPlayerController? controller) {
-                                  //_controller?.play();
-                                  print(
+                                  dLog(
                                       "component created: ${post.viewFraction} ");
                                   post.controller = controller;
                                 },
