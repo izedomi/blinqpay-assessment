@@ -10,6 +10,7 @@ import 'package:blinqpay/app/utils/internet_connectivity_util.dart';
 import 'package:blinqpay/app/utils/log_util.dart';
 import 'package:blinqpay/models/api_response.dart';
 import 'package:blinqpay/models/post_model.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/material.dart';
 
 class PostViewModel extends ChangeNotifier {
@@ -20,6 +21,12 @@ class PostViewModel extends ChangeNotifier {
 
   List<Post> _posts = [];
   List<Post> get posts => _posts;
+
+  Post? _visiblePost;
+  Post? get visiblePost => _visiblePost;
+  setVisiblePost(post) {
+    _visiblePost = post;
+  }
 
   ViewState _viewState = ViewState.idle;
   ViewState get viewState => _viewState;
@@ -114,5 +121,11 @@ class PostViewModel extends ChangeNotifier {
 
   syncData() async {
     await getPosts(await getService, notifyUI: false);
+  }
+
+  postWidgetIsVisible(Post post, double minViewport) {
+    return isVideoContent(post) &&
+        (post.viewFraction ?? 0) >= minViewport &&
+        post.controller != null;
   }
 }

@@ -3,14 +3,19 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
+import 'dart:ui' as _i9;
 
 import 'package:blinqpay/app/repository/interfaces/post_repository_interface.dart'
-    as _i3;
+    as _i4;
 import 'package:blinqpay/app/services/posts/interfaces/post_service_interface.dart'
-    as _i5;
+    as _i6;
 import 'package:blinqpay/models/api_response.dart' as _i2;
+import 'package:cached_video_player/cached_video_player.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:mockito/src/dummies.dart' as _i7;
+import 'package:video_player_platform_interface/video_player_platform_interface.dart'
+    as _i8;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -36,24 +41,35 @@ class _FakeApiResponse_0<T> extends _i1.SmartFake
         );
 }
 
+class _FakeCachedVideoPlayerValue_1 extends _i1.SmartFake
+    implements _i3.CachedVideoPlayerValue {
+  _FakeCachedVideoPlayerValue_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [PostRepositoryInterface].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockPostRepositoryInterface extends _i1.Mock
-    implements _i3.PostRepositoryInterface {
+    implements _i4.PostRepositoryInterface {
   MockPostRepositoryInterface() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.ApiResponse<dynamic>> getPosts(
-          _i5.PostServiceInterface? postService) =>
+  _i5.Future<_i2.ApiResponse<dynamic>> getPosts(
+          _i6.PostServiceInterface? postService) =>
       (super.noSuchMethod(
         Invocation.method(
           #getPosts,
           [postService],
         ),
-        returnValue: _i4.Future<_i2.ApiResponse<dynamic>>.value(
+        returnValue: _i5.Future<_i2.ApiResponse<dynamic>>.value(
             _FakeApiResponse_0<dynamic>(
           this,
           Invocation.method(
@@ -61,25 +77,25 @@ class MockPostRepositoryInterface extends _i1.Mock
             [postService],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResponse<dynamic>>);
+      ) as _i5.Future<_i2.ApiResponse<dynamic>>);
 }
 
 /// A class which mocks [PostServiceInterface].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockPostServiceInterface extends _i1.Mock
-    implements _i5.PostServiceInterface {
+    implements _i6.PostServiceInterface {
   MockPostServiceInterface() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.ApiResponse<dynamic>> getPosts() => (super.noSuchMethod(
+  _i5.Future<_i2.ApiResponse<dynamic>> getPosts() => (super.noSuchMethod(
         Invocation.method(
           #getPosts,
           [],
         ),
-        returnValue: _i4.Future<_i2.ApiResponse<dynamic>>.value(
+        returnValue: _i5.Future<_i2.ApiResponse<dynamic>>.value(
             _FakeApiResponse_0<dynamic>(
           this,
           Invocation.method(
@@ -87,5 +103,179 @@ class MockPostServiceInterface extends _i1.Mock
             [],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResponse<dynamic>>);
+      ) as _i5.Future<_i2.ApiResponse<dynamic>>);
+}
+
+/// A class which mocks [CachedVideoPlayerController].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockCachedVideoPlayerController extends _i1.Mock
+    implements _i3.CachedVideoPlayerController {
+  MockCachedVideoPlayerController() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get dataSource => (super.noSuchMethod(
+        Invocation.getter(#dataSource),
+        returnValue: _i7.dummyValue<String>(
+          this,
+          Invocation.getter(#dataSource),
+        ),
+      ) as String);
+
+  @override
+  Map<String, String> get httpHeaders => (super.noSuchMethod(
+        Invocation.getter(#httpHeaders),
+        returnValue: <String, String>{},
+      ) as Map<String, String>);
+
+  @override
+  _i8.DataSourceType get dataSourceType => (super.noSuchMethod(
+        Invocation.getter(#dataSourceType),
+        returnValue: _i8.DataSourceType.asset,
+      ) as _i8.DataSourceType);
+
+  @override
+  int get textureId => (super.noSuchMethod(
+        Invocation.getter(#textureId),
+        returnValue: 0,
+      ) as int);
+
+  @override
+  _i5.Future<Duration?> get position => (super.noSuchMethod(
+        Invocation.getter(#position),
+        returnValue: _i5.Future<Duration?>.value(),
+      ) as _i5.Future<Duration?>);
+
+  @override
+  _i3.CachedVideoPlayerValue get value => (super.noSuchMethod(
+        Invocation.getter(#value),
+        returnValue: _FakeCachedVideoPlayerValue_1(
+          this,
+          Invocation.getter(#value),
+        ),
+      ) as _i3.CachedVideoPlayerValue);
+
+  @override
+  set value(_i3.CachedVideoPlayerValue? newValue) => super.noSuchMethod(
+        Invocation.setter(
+          #value,
+          newValue,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  bool get hasListeners => (super.noSuchMethod(
+        Invocation.getter(#hasListeners),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  _i5.Future<void> initialize() => (super.noSuchMethod(
+        Invocation.method(
+          #initialize,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> dispose() => (super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> play() => (super.noSuchMethod(
+        Invocation.method(
+          #play,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> setLooping(bool? looping) => (super.noSuchMethod(
+        Invocation.method(
+          #setLooping,
+          [looping],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> pause() => (super.noSuchMethod(
+        Invocation.method(
+          #pause,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> seekTo(Duration? position) => (super.noSuchMethod(
+        Invocation.method(
+          #seekTo,
+          [position],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> setVolume(double? volume) => (super.noSuchMethod(
+        Invocation.method(
+          #setVolume,
+          [volume],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<void> setPlaybackSpeed(double? speed) => (super.noSuchMethod(
+        Invocation.method(
+          #setPlaybackSpeed,
+          [speed],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  void addListener(_i9.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void removeListener(_i9.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }

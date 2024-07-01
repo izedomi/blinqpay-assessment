@@ -4,13 +4,18 @@ import 'package:blinqpay/app/services/posts/interfaces/post_service_interface.da
 import 'package:blinqpay/models/api_response.dart';
 import 'package:blinqpay/models/post_model.dart';
 import 'package:blinqpay/view_models/post_view_model.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'post_view_model_test.mocks.dart';
 
-@GenerateMocks([PostRepositoryInterface, PostServiceInterface])
+@GenerateMocks([
+  PostRepositoryInterface,
+  PostServiceInterface,
+  CachedVideoPlayerController
+])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -299,5 +304,123 @@ void main() async {
       expect(postViewModel.posts.length, 0);
       expect(postViewModel.viewState, ViewState.error);
     });
+  });
+
+  test(
+      "post is video content, view fraction >= minViewFraction, controller != null, widget is visible is true",
+      () {
+    late Post post;
+
+    post = Post(
+        thumbnail: "",
+        userId: "blinq001",
+        id: "1",
+        noMedia: false,
+        link: "Link to media",
+        username: "Izedomi",
+        description: null,
+        timestamp: 1323232323,
+        video: true,
+        likes: [],
+        likeCount: 12,
+        commentCount: 30,
+        controller: MockCachedVideoPlayerController(),
+        viewFraction: 0.9);
+
+    expect(postViewModel.postWidgetIsVisible(post, 0.8), true);
+  });
+
+  test(
+      "post is not a video content, view fraction >= minViewFraction, controller != null, widget is visible is false",
+      () {
+    late Post post;
+
+    post = Post(
+        thumbnail: "",
+        userId: "blinq001",
+        id: "1",
+        noMedia: false,
+        link: "Link to media",
+        username: "Izedomi",
+        description: null,
+        timestamp: 1323232323,
+        video: false,
+        likes: [],
+        likeCount: 12,
+        commentCount: 30,
+        controller: MockCachedVideoPlayerController(),
+        viewFraction: 0.9);
+
+    expect(postViewModel.postWidgetIsVisible(post, 0.8), false);
+  });
+
+  test(
+      "post is video content, view fraction < minViewFraction, controller != null, widget is visible is false",
+      () {
+    late Post post;
+
+    post = Post(
+        thumbnail: "",
+        userId: "blinq001",
+        id: "1",
+        noMedia: false,
+        link: "Link to media",
+        username: "Izedomi",
+        description: null,
+        timestamp: 1323232323,
+        video: true,
+        likes: [],
+        likeCount: 12,
+        commentCount: 30,
+        controller: MockCachedVideoPlayerController(),
+        viewFraction: 0.7);
+
+    expect(postViewModel.postWidgetIsVisible(post, 0.8), false);
+  });
+
+  test(
+      "post is video content, view fraction >= minViewFraction, controller == null, widget is visible is false",
+      () {
+    late Post post;
+
+    post = Post(
+        thumbnail: "",
+        userId: "blinq001",
+        id: "1",
+        noMedia: false,
+        link: "Link to media",
+        username: "Izedomi",
+        description: null,
+        timestamp: 1323232323,
+        video: true,
+        likes: [],
+        likeCount: 12,
+        commentCount: 30,
+        viewFraction: 0.7);
+
+    expect(postViewModel.postWidgetIsVisible(post, 0.8), false);
+  });
+
+  test(
+      "post is not video content, view fraction < minViewFraction, controller == null, widget is visible is false",
+      () {
+    late Post post;
+
+    post = Post(
+        thumbnail: "",
+        userId: "blinq001",
+        id: "1",
+        noMedia: false,
+        link: "Link to media",
+        username: "Izedomi",
+        description: null,
+        timestamp: 1323232323,
+        video: false,
+        likes: [],
+        likeCount: 12,
+        commentCount: 30,
+        viewFraction: 0.7);
+
+    expect(postViewModel.postWidgetIsVisible(post, 0.8), false);
   });
 }

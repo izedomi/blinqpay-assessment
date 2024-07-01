@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:blinqpay/app/utils/math_util.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 
 List<Post> postFromJson(String str) =>
     List<Post>.from(json.decode(str).map((x) => Post.fromJson(x)));
@@ -21,6 +22,8 @@ class Post {
   List<String> likes;
   int? likeCount;
   int? commentCount;
+  CachedVideoPlayerController? controller;
+  double? viewFraction;
 
   Post(
       {this.thumbnail,
@@ -34,7 +37,9 @@ class Post {
       this.video,
       this.likes = const [],
       this.likeCount,
-      this.commentCount});
+      this.commentCount,
+      this.controller,
+      this.viewFraction});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
