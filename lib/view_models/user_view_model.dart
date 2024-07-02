@@ -43,6 +43,8 @@ class UserViewModel extends ChangeNotifier {
 
       if (!_apiResponse.success) {
         _errMsg = _apiResponse.message ?? AppText.errMsg;
+        setViewState(ViewState.error);
+        return;
       }
 
       //save to local storage
